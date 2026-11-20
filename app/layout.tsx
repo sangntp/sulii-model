@@ -1,28 +1,44 @@
 import type { Metadata } from "next";
-import { Baloo_2, Quicksand, Unbounded } from "next/font/google";
+import {
+  Playfair_Display,
+  Be_Vietnam_Pro,
+  JetBrains_Mono,
+} from "next/font/google";
 import "./globals.css";
 
-const baloo = Baloo_2({
+const playfair = Playfair_Display({
   subsets: ["latin", "vietnamese"],
-  weight: ["600", "700", "800"],
-  variable: "--font-fredoka", // Giữ nguyên tên biến để tự động áp dụng cho bản Hồng Dễ Thương
+  weight: ["400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
+  display: "swap",
 });
 
-const quicksand = Quicksand({
+const beVietnam = Be_Vietnam_Pro({
   subsets: ["latin", "vietnamese"],
-  weight: ["500", "600", "700"],
-  variable: "--font-quicksand",
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-be-vietnam",
+  display: "swap",
 });
 
-const unbounded = Unbounded({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin", "vietnamese"],
-  weight: ["600", "700", "800"],
-  variable: "--font-syne", // Giữ nguyên tên biến để tự động áp dụng cho bản Tech / Editorial
+  weight: ["400", "500"],
+  variable: "--font-jetbrains",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "SULLI ♡ Freelance Model & Sweet Portfolio",
-  description: "Portfolio chính thức của Sulli — Trẻ trung, năng động & biến hóa đa phong cách.",
+  title: "Sulii (@_sulii_04) — Model Portfolio & Comp Card",
+  description:
+    "Hồ sơ hình ảnh người mẫu tự do Sulii tại TP. Hồ Chí Minh — Lookbook, Editorial và Quảng cáo. Liên hệ hợp tác qua Instagram @_sulii_04.",
+  openGraph: {
+    title: "Sulii — Model Portfolio & Comp Card",
+    description:
+      "Hồ sơ hình ảnh người mẫu tự do Sulii tại TP. Hồ Chí Minh. Liên hệ booking: Instagram @_sulii_04.",
+    type: "website",
+    locale: "vi_VN",
+  },
 };
 
 export default function RootLayout({
@@ -33,11 +49,9 @@ export default function RootLayout({
   return (
     <html
       lang="vi"
-      className={`${baloo.variable} ${quicksand.variable} ${unbounded.variable} scroll-smooth`}
+      className={`${playfair.variable} ${beVietnam.variable} ${jetbrainsMono.variable}`}
     >
-      <body className="antialiased selection:bg-[#FF6B9E] selection:text-white">
-        {children}
-      </body>
+      <body className="font-sans antialiased">{children}</body>
     </html>
   );
 }

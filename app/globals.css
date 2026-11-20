@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@theme inline {
+  --font-serif: var(--font-playfair), Georgia, serif;
+  --font-sans: var(--font-be-vietnam), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), monospace;
+}
+
 @theme {
   --font-sans: var(--font-quicksand), ui-sans-serif, system-ui, sans-serif;
   --font-bubbly: var(--font-fredoka), ui-sans-serif, system-ui, sans-serif;
